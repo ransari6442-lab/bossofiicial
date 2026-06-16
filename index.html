@@ -1,158 +1,214 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BOSS OFFICIAL  | Official Telegram Community</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BOSS VIP | Official Telegram Community</title>
 
-  
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial,sans-serif;
-    }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
 
-    body{
-      background:linear-gradient(135deg,#020814,#07192f,#020814);
-      min-height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      padding:18px;
-      color:#fff;
-    }
+body{
+    background:linear-gradient(
+        135deg,
+        #001f4d,
+        #003d99,
+        #005ce6,
+        #003d99,
+        #001f4d
+    );
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:18px;
+    color:#fff;
+}
 
-    .card{
-      width:100%;
-      max-width:420px;
-      background:rgba(7,17,31,.95);
-      border-radius:30px;
-      padding:30px 22px;
-      text-align:center;
-      border:1px solid rgba(255,255,255,.08);
-      box-shadow:0 0 40px rgba(0,140,255,.15);
-    }
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
 
-    .profile{
-      width:160px;
-      height:160px;
-      margin:auto;
-      border-radius:50%;
-      padding:5px;
-      background:linear-gradient(45deg,#00d9ff,#0088cc,#229ed9);
-      background-size:300% 300%;
-      animation:glow 5s linear infinite;
-    }
+.card{
+    width:100%;
+    max-width:420px;
+    background:rgba(0,20,60,.92);
+    backdrop-filter:blur(15px);
+    border-radius:30px;
+    padding:30px 22px;
+    text-align:center;
+    border:2px solid rgba(0,229,255,.4);
+    box-shadow:
+        0 0 25px rgba(0,229,255,.4),
+        0 0 60px rgba(0,136,255,.25);
+}
 
-    .profile img{
-      width:100%;
-      height:100%;
-      border-radius:50%;
-      object-fit:cover;
-      border:5px solid #07111f;
-    }
+.profile{
+    width:170px;
+    height:170px;
+    margin:auto;
+    border-radius:50%;
+    padding:6px;
+    background:linear-gradient(
+        45deg,
+        #00e5ff,
+        #0088ff,
+        #229ed9
+    );
+    background-size:300% 300%;
+    animation:glowRing 5s linear infinite;
+    box-shadow:
+        0 0 20px #00e5ff,
+        0 0 40px #00bfff;
+}
 
-    @keyframes glow{
-      0%{background-position:0% 50%;}
-      100%{background-position:300% 50%;}
-    }
+.profile img{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #07111f;
+}
 
-    .title{
-      font-size:36px;
-      color:#00d9ff;
-      margin-top:15px;
-      font-weight:800;
-    }
+@keyframes glowRing{
+    0%{background-position:0% 50%;}
+    100%{background-position:300% 50%;}
+}
 
-    .subtitle{
-      font-size:15px;
-      color:#cfd8e3;
-      margin:15px 0 25px;
-      line-height:1.6;
-    }
+.title{
+    font-size:42px;
+    font-weight:900;
+    color:#00e5ff;
+    margin-top:18px;
+    letter-spacing:2px;
 
-    .btn{
-      display:block;
-      width:100%;
-      background:linear-gradient(90deg,#229ed9,#0088cc);
-      padding:16px;
-      border-radius:14px;
-      color:#fff;
-      text-decoration:none;
-      font-size:18px;
-      font-weight:700;
-      box-shadow:0 0 25px rgba(0,136,204,.4);
-    }
+    text-shadow:
+        0 2px 0 #0088cc,
+        0 4px 0 #0077b6,
+        0 6px 0 #005f99,
+        0 8px 15px rgba(0,229,255,.8),
+        0 0 25px rgba(0,229,255,1),
+        0 0 50px rgba(0,229,255,.8);
+}
 
-    .timer-box{
-      margin-top:18px;
-      padding:12px;
-      background:#0c1728;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.08);
-      font-size:16px;
-      color:#fff;
-    }
+.subtitle{
+    font-size:17px;
+    font-weight:700;
+    color:#ffffff;
+    margin:18px 0 25px;
+    line-height:1.7;
+}
 
-    .timer{
-      color:#00d9ff;
-      font-weight:800;
-      font-size:20px;
-    }
+.btn{
+    display:block;
+    width:100%;
+    background:linear-gradient(
+        90deg,
+        #00bfff,
+        #0088ff,
+        #0066ff
+    );
+    padding:18px;
+    border-radius:15px;
+    color:#fff;
+    text-decoration:none;
+    font-size:20px;
+    font-weight:900;
+    box-shadow:
+        0 0 20px rgba(0,191,255,.8),
+        0 0 40px rgba(0,136,255,.6);
+    transition:.3s;
+}
 
-    .footer{
-      margin-top:18px;
-      font-size:13px;
-      color:#4fc3ff;
-    }
-  </style>
+.btn:hover{
+    transform:translateY(-4px) scale(1.03);
+    box-shadow:
+        0 0 30px rgba(0,191,255,1),
+        0 0 60px rgba(0,136,255,.9);
+}
+
+.timer-box{
+    margin-top:18px;
+    padding:14px;
+    background:#081a35;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.1);
+    font-size:16px;
+    font-weight:700;
+}
+
+.timer{
+    color:#00e5ff;
+    font-size:24px;
+    font-weight:900;
+    text-shadow:0 0 15px #00e5ff;
+}
+
+.footer{
+    margin-top:18px;
+    color:#7fdfff;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+</style>
 </head>
 
 <body>
 
-  <div class="card">
+<div class="card">
 
     <div class="profile">
-      <img src="https://i.ibb.co/qMtNXHd7/Whats-App-Image-2026-03-17-at-9-44-37-PM.jpg" alt="Profile">
+        <img src="https://i.ibb.co/qMtNXHd7/Whats-App-Image-2026-03-17-at-9-44-37-PM.jpg" alt="Profile">
     </div>
 
-    <div class="title">ITACHI OP</div>
+    <div class="title">👑 BOSS VIP 👑</div>
 
     <div class="subtitle">
-      Join our official Telegram community for updates,
-      announcements and educational content.
+        Join our official Telegram community for updates,
+        announcements and educational content.
     </div>
 
     <a href="https://t.me/+WFRHsYL1RD83NmM1" class="btn">
-      🚀 JOIN TELEGRAM CHANNEL
+        🚀 JOIN TELEGRAM CHANNEL
     </a>
 
     <div class="timer-box">
-      Redirecting in <span class="timer" id="timer">10</span> seconds...
+        Redirecting in <span class="timer" id="timer">10</span> seconds...
     </div>
 
     <div class="footer">
-      Official Community Access
+        Official Community Access
     </div>
 
-  </div>
+</div>
 
-  <script>
-    let timeLeft = 2;
-    const timerEl = document.getElementById("timer");
+<script>
+let timeLeft = 10;
+const timerEl = document.getElementById("timer");
 
-    const countdown = setInterval(() => {
-      timeLeft--;
-      timerEl.textContent = timeLeft;
+const countdown = setInterval(() => {
+    timeLeft--;
+    timerEl.textContent = timeLeft;
 
-      if (timeLeft <= 0) {
+    if (timeLeft <= 0) {
         clearInterval(countdown);
         window.location.href = "https://t.me/+WFRHsYL1RD83NmM1";
-      }
-    }, 1000);
-  </script>
+    }
+}, 1000);
+</script>
 
 </body>
 </html>
+```
+__-
